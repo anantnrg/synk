@@ -1,6 +1,6 @@
 use winit::window::Icon;
 
-use crate::ui::Color;
+use crate::colors::Color;
 
 #[derive(Clone)]
 pub struct WindowOptions {

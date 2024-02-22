@@ -1,6 +1,5 @@
 use crate::window::Window;
 use gl::types::*;
-use gl_rs as gl;
 use glutin::{
     config::GlConfig,
     display::{GetGlDisplay, GlDisplay},
@@ -41,8 +40,8 @@ impl SkiaSurface {
         })
         .expect("Could not create Skia interface");
 
-        let mut gr_context = DirectContext::new_gl(Some(interface), None)
-            .expect("Could not create a Skia DirectContext");
+        let mut gr_context =
+            DirectContext::new_gl(interface, None).expect("Could not create a Skia DirectContext");
 
         let fb_info = {
             let mut fboid: GLint = 0;
