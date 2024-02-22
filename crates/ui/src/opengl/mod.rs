@@ -4,13 +4,13 @@ use skia::{Color, Paint};
 use winit::{event::Event, event::Modifiers, event::WindowEvent, event_loop::EventLoop};
 
 pub struct GLBackend {
-    modifiers: Modifiers,
-    surface: SkiaSurface,
-    window: Window,
-    gr_context: GraphicsContext,
-    event_loop: Option<EventLoop<()>>,
-    background: Color,
-    paint: Paint,
+    pub modifiers: Modifiers,
+    pub surface: SkiaSurface,
+    pub window: Window,
+    pub gr_context: GraphicsContext,
+    pub event_loop: Option<EventLoop<()>>,
+    pub background: Color,
+    pub paint: Paint,
 }
 
 impl GLBackend {
@@ -39,10 +39,13 @@ impl GLBackend {
 
     pub fn run(&mut self) -> anyhow::Result<()> {
         let event_loop = self.event_loop.take().unwrap();
-        let mut cursor_pos = (0.0_f32, 0.0_f32);
+        let mut _cursor_pos = (0.0_f32, 0.0_f32);
 
-        event_loop.run(move |event, window_target| match event {
-            Event::WindowEvent { window_id, event } => match event {
+        event_loop.run(move |event, _window_target| match event {
+            Event::WindowEvent {
+                window_id: _,
+                event,
+            } => match event {
                 WindowEvent::RedrawRequested => {
                     println!("redrawing")
                 }

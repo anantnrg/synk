@@ -18,6 +18,6 @@ impl Ui {
         }
     }
     pub fn run(&mut self) {
-        self.backend.run();
+        self.backend.run().expect("Couldnt run app");
     }
 }
