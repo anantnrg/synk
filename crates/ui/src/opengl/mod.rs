@@ -1,7 +1,7 @@
 use crate::window::options::WindowOptions;
 use crate::window::{config::GraphicsContext, surface::SkiaSurface, Window};
 use skia::{Color, Paint};
-use winit::{event::Modifiers, event_loop::EventLoop};
+use winit::{event::Event, event::Modifiers, event::WindowEvent, event_loop::EventLoop};
 
 pub struct GLBackend {
     modifiers: Modifiers,
@@ -41,8 +41,14 @@ impl GLBackend {
         let event_loop = self.event_loop.take().unwrap();
         let mut cursor_pos = (0.0_f32, 0.0_f32);
 
-        event_loop.run(move |event, window_target| {
-            // self.handle_events(event, window_target, &mut cursor_pos)
+        event_loop.run(move |event, window_target| match event {
+            Event::WindowEvent { window_id, event } => match event {
+                WindowEvent::RedrawRequested => {
+                    println!("redrawing")
+                }
+                _ => {}
+            },
+            _ => {}
         })?;
         Ok(())
     }
