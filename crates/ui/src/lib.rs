@@ -1,3 +1,5 @@
+use xilem::view::{button, div, View};
+
 mod color;
 mod window;
 
@@ -7,5 +9,7 @@ impl Ui {
     pub fn new() -> Self {
         Ui {}
     }
-    pub fn run(&mut self) {}
+    pub fn run(&mut self) -> impl View<Self> {
+        div((button("hello", || {})))
+    }
 }
