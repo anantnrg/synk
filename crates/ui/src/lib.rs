@@ -1,3 +1,4 @@
+mod color;
 mod window;
 
 pub struct Ui {}
