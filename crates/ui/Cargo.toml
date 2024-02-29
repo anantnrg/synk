@@ -4,3 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+xilem = { git = "https://github.com/synkdev/xilem" }
