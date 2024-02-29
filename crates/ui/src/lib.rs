@@ -1,3 +1,5 @@
+mod window;
+
 pub struct Ui {}
 
 impl Ui {
