@@ -2527,7 +2527,7 @@ dependencies = [
  "anyhow",
  "core",
  "ui",
- "winit",
+ "xilem",
 ]
 
 [[package]]
