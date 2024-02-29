@@ -1,4 +1,4 @@
-use vello::peniko::Color as VelloColor;
+use xilem::vello::peniko::Color as VelloColor;
 
 /// Struct to represent hex, rgb and rgba colors. Implements a method to convert
 /// `self` into a `VelloColor` for rendering
